@@ -1,0 +1,75 @@
+name: Build Develop
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1.4.2
+        with:
+          node-version: ${{ matrix.node-version }}
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      - uses: oprypin/find-latest-tag@v1
+        with:
+          repository: ${{ github.repository	 }}
+          releases-only: true
+        id: latest-release
+      - run: echo "Latest release is at version ${{ steps.latest-release.outputs.tag }}"
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: configure @hotelise repo
+        run: |
+          aws codeartifact login --tool npm  \
+          --namespace hotelise \
+          --repository hotelise \
+          --domain hotelise \
+          --region eu-west-1 \
+          --domain-owner ${{ secrets.DEV_ACCOUNT_ID }}
+      - run: npm install -g yarn
+      - name: yarn install, build, and manifest
+        run: |
+          yarn install
+          CI=false yarn build
+          yarn manifest
+      - name: prepare npm package
+        run: |
+           cp -r ./build ./nova-app && cd ./nova-app
+           npm init -y --scope=@hotelise
+           npm version  --allow-same-version ${{ steps.latest-release.outputs.tag }}
+           npm version prerelease --preid=build.$GITHUB_RUN_NUMBER
+      - name: publish
+        run: |
+           cd ./nova-app
+           npm publish
+     # Deploy
+      - name: Deploy 
+        run: |
+          echo "Deploy"
+      # Test deploy
+      - name: Validate deploy
+        run: |
+          echo "Validate deploy"
+      # Destroy
+      - name: Destroy 
+        run: |
+          echo "Destroy"
+      # Test destroy
+      - name: Validate destroy
+        run: |
+          echo "Validate destroy"

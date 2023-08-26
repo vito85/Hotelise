@@ -1,0 +1,90 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"plugin:react/recommended",
+		"airbnb",
+		"plugin:@typescript-eslint/recommended",
+		"prettier",
+		"eslint:recommended",
+		"plugin:prettier/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"rules": {
+		// "no-undef": "off",
+		"import/no-unresolved": "off",
+		"no-fallthrough": "off",
+		"no-cond-assign": "off",
+		"no-shadow": "off",
+		"no-lonely-if": "off",
+		"camelcase": "off",
+		"radix": "off",
+		"no-unused-vars": "off",
+		"no-restricted-syntax": "off",
+		"no-await-in-loop": "off",
+		"no-nested-ternary": "off",
+		"no-prototype-builtins": "off",
+		"consistent-return": "off",
+		"no-sparse-arrays": "off",
+		"array-callback-return": "off",
+		"no-tabs": "off",
+		"no-plusplus": "off",
+		"no-underscore-dangle": "off",
+		"no-param-reassign": 0,
+		"arrow-body-style": "off",
+		"default-param-last": "off",
+		// "indent": ["error", "tab"],
+		"indent": "off",
+		"prettier/prettier": [2, { "useTabs": true }],
+
+		"react/function-component-definition": "off",
+		"react/no-unused-prop-types": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/require-default-props": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off",
+		"react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+		"react/jsx-no-useless-fragment": "off",
+		"react/button-has-type": "off",
+
+		"@typescript-eslint/no-unused-vars": "off",
+		"@typescript-eslint/no-empty-function": "off",
+		"@typescript-eslint/explicit-function-return-type": 0,
+		"@typescript-eslint/no-use-before-define": ["error"],
+		"@typescript-eslint/no-shadow": ["error"],
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never",
+				"tsx": "never"
+			}
+		],
+		"import/prefer-default-export": "off"
+	},
+	"plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
+	},
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx"],
+			"rules": {
+				"no-undef": "off"
+			}
+		}
+	]
+}

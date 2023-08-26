@@ -1,0 +1,13 @@
+.PhoneInput {
+	width: 100%;
+	border-radius: 55px;
+	display: flex;
+	padding: 0 24px;
+	color: #ffffff;
+
+	.PhoneInputInput {
+		border: none;
+		background: transparent;
+		color: #ffffff !important;
+	}
+}

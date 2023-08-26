@@ -1,0 +1,143 @@
+name: Release Master
+
+on:
+  push:
+    branches: [ master-test ]
+
+jobs:
+  verify:
+    # The type of runner that the job will run on
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Set the lambda package value
+        run: |
+          echo "LAMBDA_ZIP_PACKAGE=media-analysis-api-function" >> $GITHUB_ENV
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1.4.2
+        with:
+          node-version: ${{ matrix.node-version }}
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      - uses: oprypin/find-latest-tag@v1
+        with:
+          repository: hotelise/api-lambda
+          releases-only: true
+        id: latest-release
+      - run: echo "Latest release is at version ${{ steps.latest-release.outputs.tag }}"
+      - run: npm install -g yarn
+      - name: yarn install, build, and zip
+        run: |
+          yarn install
+          yarn build
+          yarn zip
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: configure npm repo
+        run: |
+          aws codeartifact login --tool npm --repository hotelise --domain hotelise --domain-owner 174881285054 --region eu-west-1
+      - name: Print new build number
+        run: echo "Build number is $GITHUB_RUN_NUMBER"
+      - name: Determine release-type
+        id: release-type
+        run: |
+          release_type=$(echo "$MESSAGE" | sed -E "s/.*\[(major|minor|patch)\].*/\1/")
+          if [ -n "$release_type" ]; then
+            echo "::set-output name=release-type::$release_type"
+          else
+            echo "::set-output name=release-type::minor"
+          fi
+        env:
+          MESSAGE: ${{ github.event.commits[0].message }}
+      - name: package lambda zip npm
+        run: |
+          mkdir -p ./dist/${LAMBDA_ZIP_PACKAGE}
+          cp ./dist/${LAMBDA_ZIP_PACKAGE}.zip ./dist/${LAMBDA_ZIP_PACKAGE}/${LAMBDA_ZIP_PACKAGE}.zip
+          cd ./dist/${LAMBDA_ZIP_PACKAGE}
+          npm init -y
+          echo "setting zip package version ${{ steps.latest-release.outputs.tag }}"
+          npm version ${{ steps.latest-release.outputs.tag }}
+          echo "increasing verison number as $RELEASE_TYPE"
+          npm version patch
+        env:
+          RELEASE_TYPE: ${{ steps.release-type.outputs.release-type }}
+      - name: publish lambda zip
+        run: |
+          cd ./dist/${LAMBDA_ZIP_PACKAGE}
+          npm publish
+
+      # Deploy
+      - name: Deploy
+        run: |
+          echo "Deploy"
+      # Test deploy
+      - name: Validate deploy
+        run: |
+          echo "Validate deploy"
+      # Destroy
+      - name: Destroy
+        run: |
+          echo "Destroy"
+      # Test destroy
+      - name: Validate destroy
+        run: |
+          echo "Validate destroy"
+
+  release:
+    needs: verify
+    runs-on: ubuntu-latest
+    container: ubuntu:latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    if: ${{ github.event_name == 'push' }}
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Setup
+        run: |
+          apt-get update
+          apt-get install -y git
+          apt-get clean
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: actions/setup-node@v1.4.2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install release-it
+        run: npm i -g release-it
+
+      - name: Determine release-type
+        id: release-type
+        run: |
+          release_type=$(echo "$MESSAGE" | sed -E "s/.*\[(major|minor|patch)\].*/\1/")
+          if [ -n "$release_type" ]; then
+            echo "::set-output name=release-type::$release_type"
+          else
+            echo "::set-output name=release-type::minor"
+          fi
+        env:
+          MESSAGE: ${{ github.event.commits[0].message }}
+
+      # Drafts your next Release notes as Pull Requests are merged into "master"
+      - name: Release
+        run: |
+          echo ${{ github.event_name }}
+          release-it --ci patch -c .github/.release-it.yaml -V -VV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TYPE: ${{ steps.release-type.outputs.release-type }}

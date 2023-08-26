@@ -1,0 +1,29 @@
+name-template: v$NEXT_PATCH_VERSION 🌈
+tag-template: v$NEXT_PATCH_VERSION
+categories:
+  - title: 🚀 Features
+    labels:
+      - feature
+  - title: 🐛 Bug Fixes
+    labels:
+      - fix
+      - bug
+  - title: 🎨 Refactor
+    labels:
+      - refactor
+  - title: 🧰 Maintenance
+    labels:
+      - chore
+      - improvement
+  - title: 📝 Docs
+    labels:
+      - docs
+change-template: '- #$NUMBER: $TITLE (thanks to @$AUTHOR)'
+template: |
+  ## What's Changed
+
+  $CHANGES
+
+  ## Thanks to
+
+  $CONTRIBUTORS

@@ -1,0 +1,33 @@
+@import "./resources.scss";
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
+}
+
+input {
+	&::-ms-reveal {
+		display: none;
+	}
+
+	&::-ms-clear {
+		display: none;
+	}
+}
+
+.mbsc-calendar-cell > div:first-child {
+	display: none !important;
+}

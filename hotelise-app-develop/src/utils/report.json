@@ -1,0 +1,414 @@
+[
+  {
+    "reportItems": [
+      {
+        "guest": {
+          "first_name": "Alexander",
+          "last_name": "Kulikov",
+          "picture_url": "https://a0.muscache.com/im/pictures/user/788534ba-9fce-49af-bea4-b55ea57d79c2.jpg?aki_policy=profile_x_medium"
+        },
+        "start_date": "2022-04-08",
+        "end_date": "2022-05-05",
+        "nights": 27,
+        "code": "HMSQN9BEBE",
+        "status": "accepted",
+        "currency": "USD",
+        "accommodation": 1514,
+        "host_service_fee": 55.08,
+        "cleaning": 16,
+        "payout_price": 1474.92,
+        "net_accomdation": 1458.92,
+        "hotelise_help": 291.78,
+        "owner_income": 1167.14,
+        "subtotal": 1530,
+        "channel": "airbnb-official"
+      },
+      {
+        "guest": {
+          "first_name": "Evgeniy",
+          "last_name": "Shvets",
+          "picture_url": "https://a0.muscache.com/defaults/user_pic-225x225.png?v=3"
+        },
+        "start_date": "2022-05-05",
+        "end_date": "2022-05-09",
+        "nights": 4,
+        "code": "HMNBBRMZ23",
+        "status": "accepted",
+        "currency": "USD",
+        "accommodation": 232,
+        "host_service_fee": 8.93,
+        "cleaning": 16,
+        "payout_price": 239.07,
+        "net_accomdation": 223.07,
+        "hotelise_help": 44.61,
+        "owner_income": 178.46,
+        "subtotal": 248,
+        "channel": "airbnb-official"
+      },
+      {
+        "guest": {
+          "first_name": "Karina",
+          "last_name": "Bild",
+          "picture_url": "https://a0.muscache.com/im/pictures/user/49a1c490-15de-491e-a4a3-95342fddcad3.jpg?aki_policy=profile_x_medium"
+        },
+        "start_date": "2022-05-09",
+        "end_date": "2022-05-10",
+        "nights": 1,
+        "code": "HM2ZQZTJ95",
+        "status": "accepted",
+        "currency": "USD",
+        "accommodation": 32,
+        "host_service_fee": 1.73,
+        "cleaning": 16,
+        "payout_price": 46.27,
+        "net_accomdation": 30.27,
+        "hotelise_help": 6.05,
+        "owner_income": 24.22,
+        "subtotal": 48,
+        "channel": "airbnb-official"
+      },
+      {
+        "guest": {
+          "first_name": "Danila",
+          "last_name": "Vladimirov",
+          "picture_url": "https://a0.muscache.com/im/users/37967306/profile_pic/1436436271/original.jpg?aki_policy=profile_x_medium"
+        },
+        "start_date": "2022-05-10",
+        "end_date": "2022-05-13",
+        "nights": 3,
+        "code": "HM3TDEWMDZ",
+        "status": "accepted",
+        "currency": "USD",
+        "accommodation": 105,
+        "host_service_fee": 4.36,
+        "cleaning": 16,
+        "payout_price": 116.64,
+        "net_accomdation": 100.64,
+        "hotelise_help": 20.13,
+        "owner_income": 80.51,
+        "subtotal": 121,
+        "channel": "airbnb-official"
+      },
+      {
+        "guest": {
+          "first_name": "Olesya",
+          "last_name": "Pekhota",
+          "picture_url": "https://a0.muscache.com/im/pictures/user/ad97e208-ceef-4504-8456-5450b3c1abf1.jpg?aki_policy=profile_x_medium"
+        },
+        "start_date": "2022-05-13",
+        "end_date": "2022-05-16",
+        "nights": 3,
+        "code": "HMNZEN2Z84",
+        "status": "accepted",
+        "currency": "USD",
+        "accommodation": 171,
+        "host_service_fee": 6.73,
+        "cleaning": 16,
+        "payout_price": 180.27,
+        "net_accomdation": 164.27,
+        "hotelise_help": 32.85,
+        "owner_income": 131.42,
+        "subtotal": 187,
+        "channel": "airbnb-official"
+      }
+    ],
+    "expenses": [
+      {
+        "id": "98807d70-33bb-4a96-9caa-bbca30446e00",
+        "status": "ACTIVE",
+        "name": "Essential supplues",
+        "description": "Tea 2 pieces 80AMD, coffee 2 pieces 150 AMD, water 2 pieces 200 AMD, toilet paper 3 pieces 390AMD, kitchen paper 1 piece 400 AMD.",
+        "amount": 1220,
+        "currency": "AMD",
+        "expense_date": "2022-05-05T08:47:05.831Z",
+        "propertyId": "693354",
+        "createdAt": "2022-05-05T08:47:40.702Z"
+      },
+      {
+        "id": "ffa2ba53-fb56-4090-80e0-f54ba8af634b",
+        "status": "ACTIVE",
+        "name": "cleaning supplies",
+        "description": "feri 1x400;domestos 1x1000; sif 1x1000, flor1x1000,bi max 1x2000",
+        "amount": 5400,
+        "currency": "AMD",
+        "expense_date": "2022-05-05T08:49:13.968Z",
+        "propertyId": "693354",
+        "createdAt": "2022-05-05T08:52:40.708Z"
+      },
+      {
+        "id": "d01b8368-6bdf-451c-8f5c-0e0434a0b28a",
+        "status": "ACTIVE",
+        "name": "Essential supplies",
+        "description": "Tea 2 pieces 80AMD, coffee 2 pieces 150 AMD, water 2 pieces 200 AMD, toilet paper 3 pieces 390AMD, kitchen paper 1 piece 400 AMD.",
+        "amount": 1220,
+        "currency": "AMD",
+        "expense_date": "2022-05-09T07:14:49.199Z",
+        "propertyId": "693354",
+        "createdAt": "2022-05-09T07:15:17.393Z"
+      },
+      {
+        "id": "f30d2b2f-94bf-477b-8272-e26fd532aa94",
+        "status": "ACTIVE",
+        "name": "Essential supplies",
+        "description": "Tea 2 pieces 80AMD, coffee 2 pieces 150 AMD, water 2 pieces 200 AMD, toilet paper 3 pieces 390AMD, kitchen paper 1 piece 400 AMD.",
+        "amount": 1220,
+        "currency": "AMD",
+        "expense_date": "2022-05-10T08:58:31.468Z",
+        "propertyId": "693354",
+        "createdAt": "2022-05-12T08:59:04.720Z"
+      },
+      {
+        "id": "abe0622c-2358-4312-8ebc-237ffd739d00",
+        "status": "ACTIVE",
+        "name": "Essential supplies",
+        "description": "Tea 2 pieces 80AMD, coffee 2 pieces 150 AMD, water 2 pieces 200 AMD, toilet paper 1 pieces 130 AMD, kitchen paper 1 piece 400 AMD.",
+        "amount": 960,
+        "currency": "AMD",
+        "expense_date": "2022-05-13T11:18:49.215Z",
+        "propertyId": "693354",
+        "createdAt": "2022-05-20T11:22:13.456Z"
+      },
+      {
+        "id": "4afa2f69-d151-46b2-8a6f-ac40154110c5",
+        "status": "ACTIVE",
+        "name": "Essential supplies ",
+        "description": "Kitchen paper1 x 400 ,toilet paper2x220,,water2x200, coffe 2 x160,\n\n\n",
+        "amount": 980,
+        "currency": "AMD",
+        "expense_date": "2022-05-13T11:34:14.180Z",
+        "propertyId": "693354",
+        "createdAt": "2022-05-13T12:00:44.603Z"
+      },
+      {
+        "id": "9f778804-bdbd-414d-8cb1-d03abe906384",
+        "status": "ACTIVE",
+        "name": "Essential supplies",
+        "description": "Tea 2 pieces 80AMD, coffee 2 pieces 150 AMD, water 2 pieces 200 AMD, toilet paper 3 pieces 390AMD, kitchen paper 1 piece 400 AMD.",
+        "amount": 1220,
+        "currency": "AMD",
+        "expense_date": "2022-05-16T08:19:38.173Z",
+        "propertyId": "693354",
+        "createdAt": "2022-05-27T08:20:22.606Z"
+      },
+      {
+        "id": "0c033746-b1ec-4009-8ac3-72c10caca15b",
+        "status": "ACTIVE",
+        "name": "Internet",
+        "description": "Monthly internet",
+        "amount": 6500,
+        "currency": "AMD",
+        "expense_date": "2022-05-16T10:40:55.918Z",
+        "propertyId": "693354",
+        "createdAt": "2022-05-16T10:41:19.461Z"
+      },
+      {
+        "id": "58c3340f-9215-4be4-8fd3-a190f1b3ba91",
+        "status": "ACTIVE",
+        "name": "Utility",
+        "description": "Gaz 19543.00\nGaz service 2270.00\nEnergy 8069.00\nWater 2606.00",
+        "amount": 32488,
+        "currency": "AMD",
+        "expense_date": "2022-05-25T07:33:10.727Z",
+        "propertyId": "693354",
+        "createdAt": "2022-05-25T07:34:59.818Z"
+      }
+    ],
+    "contract": {
+      "id": "5ab3b600-6e13-420d-93e6-fc4ed023d79c",
+      "status": "ACTIVE",
+      "hoteliseFee": 20,
+      "channelSplit": { "airbnb": 1, "bookingcom": 1, "direct": 1, "vrbo": 1 },
+      "propertyId": "693354",
+      "createdAt": "2022-02-24T02:17:19.245Z"
+    },
+    "calculations": {
+      "totalIncomePerCurrency": { "USD": 1581.75 },
+      "totalExpensesPerCurrency": { "AMD": 51208 },
+      "allAccountTransfers": [
+        {
+          "_item": {
+            "guest": {
+              "first_name": "Alexander",
+              "last_name": "Kulikov",
+              "picture_url": "https://a0.muscache.com/im/pictures/user/788534ba-9fce-49af-bea4-b55ea57d79c2.jpg?aki_policy=profile_x_medium"
+            },
+            "start_date": "2022-04-08",
+            "end_date": "2022-05-05",
+            "nights": 27,
+            "code": "HMSQN9BEBE",
+            "status": "accepted",
+            "currency": "USD",
+            "accommodation": 1514,
+            "host_service_fee": 55.08,
+            "cleaning": 16,
+            "payout_price": 1474.92,
+            "net_accomdation": 1458.92,
+            "hotelise_help": 291.78,
+            "owner_income": 1167.14,
+            "subtotal": 1530,
+            "channel": "airbnb-official"
+          },
+          "_transferDetails": {
+            "_currency": "USD",
+            "_amount": 1167.14,
+            "_accountHolder": 1,
+            "_toTransfer": 1167.14
+          }
+        },
+        {
+          "_item": {
+            "guest": {
+              "first_name": "Evgeniy",
+              "last_name": "Shvets",
+              "picture_url": "https://a0.muscache.com/defaults/user_pic-225x225.png?v=3"
+            },
+            "start_date": "2022-05-05",
+            "end_date": "2022-05-09",
+            "nights": 4,
+            "code": "HMNBBRMZ23",
+            "status": "accepted",
+            "currency": "USD",
+            "accommodation": 232,
+            "host_service_fee": 8.93,
+            "cleaning": 16,
+            "payout_price": 239.07,
+            "net_accomdation": 223.07,
+            "hotelise_help": 44.61,
+            "owner_income": 178.46,
+            "subtotal": 248,
+            "channel": "airbnb-official"
+          },
+          "_transferDetails": {
+            "_currency": "USD",
+            "_amount": 178.46,
+            "_accountHolder": 1,
+            "_toTransfer": 178.46
+          }
+        },
+        {
+          "_item": {
+            "guest": {
+              "first_name": "Karina",
+              "last_name": "Bild",
+              "picture_url": "https://a0.muscache.com/im/pictures/user/49a1c490-15de-491e-a4a3-95342fddcad3.jpg?aki_policy=profile_x_medium"
+            },
+            "start_date": "2022-05-09",
+            "end_date": "2022-05-10",
+            "nights": 1,
+            "code": "HM2ZQZTJ95",
+            "status": "accepted",
+            "currency": "USD",
+            "accommodation": 32,
+            "host_service_fee": 1.73,
+            "cleaning": 16,
+            "payout_price": 46.27,
+            "net_accomdation": 30.27,
+            "hotelise_help": 6.05,
+            "owner_income": 24.22,
+            "subtotal": 48,
+            "channel": "airbnb-official"
+          },
+          "_transferDetails": {
+            "_currency": "USD",
+            "_amount": 24.22,
+            "_accountHolder": 1,
+            "_toTransfer": 24.22
+          }
+        },
+        {
+          "_item": {
+            "guest": {
+              "first_name": "Danila",
+              "last_name": "Vladimirov",
+              "picture_url": "https://a0.muscache.com/im/users/37967306/profile_pic/1436436271/original.jpg?aki_policy=profile_x_medium"
+            },
+            "start_date": "2022-05-10",
+            "end_date": "2022-05-13",
+            "nights": 3,
+            "code": "HM3TDEWMDZ",
+            "status": "accepted",
+            "currency": "USD",
+            "accommodation": 105,
+            "host_service_fee": 4.36,
+            "cleaning": 16,
+            "payout_price": 116.64,
+            "net_accomdation": 100.64,
+            "hotelise_help": 20.13,
+            "owner_income": 80.51,
+            "subtotal": 121,
+            "channel": "airbnb-official"
+          },
+          "_transferDetails": {
+            "_currency": "USD",
+            "_amount": 80.51,
+            "_accountHolder": 1,
+            "_toTransfer": 80.51
+          }
+        },
+        {
+          "_item": {
+            "guest": {
+              "first_name": "Olesya",
+              "last_name": "Pekhota",
+              "picture_url": "https://a0.muscache.com/im/pictures/user/ad97e208-ceef-4504-8456-5450b3c1abf1.jpg?aki_policy=profile_x_medium"
+            },
+            "start_date": "2022-05-13",
+            "end_date": "2022-05-16",
+            "nights": 3,
+            "code": "HMNZEN2Z84",
+            "status": "accepted",
+            "currency": "USD",
+            "accommodation": 171,
+            "host_service_fee": 6.73,
+            "cleaning": 16,
+            "payout_price": 180.27,
+            "net_accomdation": 164.27,
+            "hotelise_help": 32.85,
+            "owner_income": 131.42,
+            "subtotal": 187,
+            "channel": "airbnb-official"
+          },
+          "_transferDetails": {
+            "_currency": "USD",
+            "_amount": 131.42,
+            "_accountHolder": 1,
+            "_toTransfer": 131.42
+          }
+        }
+      ],
+      "mergedAccountTransfers": [
+        {
+          "_currency": "USD",
+          "_amount": 1581.75,
+          "_accountHolder": 1,
+          "_toTransfer": 1581.75
+        }
+      ],
+      "deltaAccountTransfers": [
+        {
+          "_currency": "USD",
+          "_amount": 1581.75,
+          "_accountHolder": 1,
+          "_toTransfer": 1581.75
+        }
+      ],
+      "finalTransfers": {
+        "finalCurrencyAndAccounts": [
+          {
+            "_currency": "USD",
+            "_amount": 1581.75,
+            "_accountHolder": 1,
+            "_toTransfer": 1581.75
+          }
+        ],
+        "remainingExpenses": { "AMD": 51208 }
+      },
+      "totalInCurrency": {
+        "currency": "USD",
+        "totalIncomeInCurrency": 1581.75,
+        "totalExpensesInCurrency": 112.66,
+        "netOwnerIncomeInCurrency": 1469.09
+      }
+    }
+  }
+]
